@@ -1,60 +1,51 @@
-name: Module CI/CD
+# This is a basic workflow that is manually triggered
+
+name: Release workflow
 
 on:
-  push:
-    tags:
-      - 'v*'
+  release:
+    types: [published]
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  release-module:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Use Node.js
-        uses: actions/setup-node@v1
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '12.x'
+          node-version: '22.x'
 
       - name: Install dependencies
         run: npm ci
 
-      # run our gulp build action
-      - name: Build dist directory
+      - name: Run build script
         run: npm run build
 
-      # create a zip file with all files required by the module to add to the release
-      - name: Zip Files
+      - name: Zip repository
         working-directory: ./dist
-        run: zip -r ./module.zip ./*
+        run: zip -r ../module.zip .
 
-      # Get the version from 'module.json'
-      - name: Get Version
-        shell: bash
-        id: get-version
-        run: echo "::set-output name=version::$(node ./.github/workflows/get-version.js)"
-
-      # Create a release for this specific version
-      - name: Create Release
-        id: create_version_release
-        uses: ncipollo/release-action@v1
+      - name: Upload Release Asset (ZIP)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          allowUpdates: true # set this to false if you want to prevent updating existing releases
-          name: ${{ steps.get-version.outputs.version }}
-          body: |
-            ${{ steps.changelog.outputs.clean_changelog }}
-          draft: false
-          prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: './dist/module.json,./dist/module.zip'
-          tag_name: ${{ steps.get-version.outputs.version }}
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./module.zip
+          asset_name: module.zip
+          asset_content_type: application/zip
 
-      # Publish this new version to the Foundry VTT Module Listing
-      - name: FoundryVTT AutoPublish
-        uses: Varriount/fvtt-autopublish@v1.0.2a
+      - name: Upload Release Asset (JSON)
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          username: ${{ secrets.FOUNDRY_ADMIN_USER }}
-          password: ${{ secrets.FOUNDRY_ADMIN_PW }}
-          module-id: 719
-          manifest-url: https://github.com/ElfFriend-DnD/foundryvtt-gmScreen/releases/download/v${{ steps.get-version.outputs.version }}/module.json
-          manifest-file: src/module.json
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./src/module.json
+          asset_name: module.json
+          asset_content_type: application/json
