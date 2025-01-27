@@ -157,6 +157,16 @@ export class GmScreen {
       onChange: debouncedReload,
     });
 
+    game.settings.register(MODULE_ID, this.SETTINGS.editableCell, {
+      name: `${MODULE_ABBREV}.settings.${this.SETTINGS.editableCell}.Name`,
+      default: false,
+      type: Boolean,
+      scope: 'client',
+      config: true,
+      hint: `${MODULE_ABBREV}.settings.${this.SETTINGS.editableCell}.Hint`,
+      onChange: debouncedReload,
+    });
+
     game.settings.register(MODULE_ID, this.SETTINGS.rightMargin, {
       name: `${MODULE_ABBREV}.settings.${this.SETTINGS.rightMargin}.Name`,
       default: 0,

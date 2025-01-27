@@ -115,6 +115,7 @@ export class GmScreenDataManager {
       drawerOpacity: game.settings.get(MODULE_ID, SETTINGS.drawerOpacity),
       condensedButton: game.settings.get(MODULE_ID, SETTINGS.condensedButton),
       displayDrawer: game.settings.get(MODULE_ID, SETTINGS.displayDrawer),
+      editableCell: game.settings.get(MODULE_ID, SETTINGS.editableCell),
     };
   }
 
