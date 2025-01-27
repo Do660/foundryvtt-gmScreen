@@ -57,6 +57,10 @@
       "display-as-drawer": {
         "Name": "Mostrar como bandeja",
         "Hint": "Muestra la pantalla del GM como una bandeja en la parte inferior de la pantalla, en lugar de una ventana de diálogo normal. Si quieres utilizar PopOut!, establece esta opción a falso"
+      },
+      "display-as-edit": {
+        "Name": "Display Cell as Editable",
+        "Hint": "Shows the GM screen with editable cells."
       }
     },
     "warnings": {

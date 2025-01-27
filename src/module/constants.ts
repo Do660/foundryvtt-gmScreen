@@ -17,6 +17,7 @@ export const TEMPLATES = {
 export enum MySettings {
   columns = 'columns',
   displayDrawer = 'display-as-drawer',
+  editableCell = 'display-as-edit',
   drawerHeight = 'drawer-height',
   drawerOpacity = 'drawer-opacity',
   drawerWidth = 'drawer-width',

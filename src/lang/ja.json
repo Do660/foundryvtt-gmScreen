@@ -53,6 +53,10 @@
       "display-as-drawer": {
         "Name": "GMスクリーンを引き出し表示する",
         "Hint": "GMスクリーンを画面下部から引き出し表示します。PopOutを使用する場合は、この設定を外してください。"
+      },
+      "display-as-edit": {
+        "Name": "Display Cell as Editable",
+        "Hint": "Shows the GM screen with editable cells."
       }
     },
     "warnings": {

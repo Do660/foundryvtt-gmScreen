@@ -53,6 +53,10 @@
       "display-as-drawer": {
         "Name": "Display as Drawer",
         "Hint": "Display the GM Screen as a drawer on the bottom of the screen, as opposed to a normal dialog. If you want to use PopOut, set this to false."
+      },
+      "display-as-edit": {
+        "Name": "Display Cell as Editable",
+        "Hint": "Shows the GM screen with editable cells."
       }
     },
     "warnings": {

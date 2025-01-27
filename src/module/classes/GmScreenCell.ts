@@ -23,12 +23,12 @@ export class GmScreenCell {
    * BRITTLE
    */
   static applyGmScreenCellSheetOverrides(SheetClass: DocumentSheet, cellId: string) {
-    SheetClass.options.editable = false;
+    SheetClass.options.editable = GmScreen.dataManager.editableMode;
     SheetClass.options.popOut = false;
     //@ts-expect-error Yeah I know this isn't the best idea
     SheetClass.cellId = cellId;
 
-    Object.defineProperty(SheetClass, 'isEditable', { value: false });
+    Object.defineProperty(SheetClass, 'isEditable', { value: GmScreen.dataManager.editableMode });
 
     //@ts-expect-error Yeah I know this isn't the best idea
     SheetClass._injectHTML = function (html) {

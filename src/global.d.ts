@@ -16,6 +16,7 @@ declare global {
     interface Values {
       'gm-screen.columns': number;
       'gm-screen.display-as-drawer': boolean;
+      'gm-screen.display-as-edit': boolean;
       'gm-screen.drawer-height': number;
       'gm-screen.drawer-opacity': number;
       'gm-screen.drawer-width': number;

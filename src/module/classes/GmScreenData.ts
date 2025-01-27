@@ -1,9 +1,7 @@
-import { JournalEntryData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs';
-import { GmScreenGrid, GmScreenGridEntry, GmScreenSettingsData, MyHooks, MySettings } from '../../types';
+import { GmScreenGrid, GmScreenGridEntry, GmScreenSettingsData } from '../../types';
 import { MODULE_ABBREV, MODULE_ID } from '../constants';
-import { debouncedReload, log } from '../helpers';
+import { log } from '../helpers';
 import { GmScreen } from './GmScreen';
-import { GmScreenSettingsConfig } from './GmScreenSettingsConfig';
 
 export const defaultGmScreenData: GmScreenSettingsData = {
   activeGridId: 'default',
@@ -95,6 +93,13 @@ export class GmScreenDataManager {
    */
   get drawerMode() {
     return game.settings.get(MODULE_ID, GmScreen.SETTINGS.displayDrawer);
+  }
+
+  /**
+   * @returns `true` if the user wants to use editable cell mode
+   */
+  get editableMode() {
+    return game.settings.get(MODULE_ID, GmScreen.SETTINGS.editableCell);
   }
 
   /**
