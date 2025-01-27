@@ -21,7 +21,7 @@ jobs:
           node-version: '22.x'
 
       - name: Install dependencies
-        run: npm i
+        run: npm ci --cache .npm --prefer-offline
 
       - name: Run build script
         run: npm run build
