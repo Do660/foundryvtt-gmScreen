@@ -108,12 +108,11 @@ $transition-timing: 400ms;
     }
 
     .active {
-      background: url(../../../ui/parchment.jpg) repeat;
       text-shadow: none;
     }
 
     .item:not(.active) {
-      background: rgba(50, 50, 50, 0.7) linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 50%);
+      background: rgba(75, 75, 75, 0.7) linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 50%);
     }
 
     .meta-actions {
@@ -121,10 +120,6 @@ $transition-timing: 400ms;
 
       i {
         margin-right: 0;
-      }
-
-      button {
-        background: url(../../../ui/parchment.jpg) repeat;
       }
     }
 
@@ -349,10 +344,6 @@ $transition-timing: 400ms;
       line-height: normal;
     }
   }
-}
-
-.gm-screen-container {
-  background: url(../../../ui/parchment.jpg) repeat;
 }
 
 @import './package-overrides.scss';
