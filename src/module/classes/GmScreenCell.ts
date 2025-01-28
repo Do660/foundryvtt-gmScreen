@@ -36,7 +36,7 @@ export class GmScreenCell {
       $(this.cellId).find('.gm-screen-grid-cell-title').text(this.title);
 
       //@ts-expect-error I inject cellId
-      const gridCellContent = $(this.cellId).find('.gm-screen-grid-cell-content');
+      const gridCellContent = $(this.cellId).find('[name="gm-screen-grid-cell-content-section"]');
 
       log(false, 'CompactEntitySheet overwritten _injectHTML', {
         targetElement: gridCellContent,
