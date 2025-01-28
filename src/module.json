@@ -3,7 +3,7 @@
   "id": "gm-screen",
   "title": "GM Screen",
   "description": "Creates a Configurable modular grid that GMs can populate with journal entries, rollable tables, etc.",
-  "version": "4.6.4",
+  "version": "4.7.0",
   "author": "Andrew Krigline (akrigline), Do660",
   "authors": [
     {
@@ -11,7 +11,7 @@
     }
   ],
   "compatibility": {
-    "minimum": 9,
+    "minimum": 12,
     "verified": 12
   },
   "scripts": [],
