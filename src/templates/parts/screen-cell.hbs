@@ -45,14 +45,16 @@
 
   <div class="gm-screen-grid-cell-content-wrapper">
     <div class="gm-screen-grid-cell-content">
-      {{!-- Contents injected in GmScreenApplication.activateListeners --}}
-      {{#if @root/isGM}}
-      {{#unless this.entityUuid}}
-      <div class="gm-screen-grid-cell-hint">
-        <h6>{{localize 'GMSCR.gmScreen.EmptyCellHint'}}</h6>
-      </div>
-      {{/unless}}
-      {{/if}}
+      <section class="window-content">
+        {{!-- Contents injected in GmScreenApplication.activateListeners --}}
+        {{#if @root/isGM}}
+        {{#unless this.entityUuid}}
+        <div class="gm-screen-grid-cell-hint">
+          <h6>{{localize 'GMSCR.gmScreen.EmptyCellHint'}}</h6>
+        </div>
+        {{/unless}}
+        {{/if}}
+      </section>
     </div>
   </div>
 </div>
