@@ -56,7 +56,7 @@ export class GmScreenCell {
       $(this.cellId).find('.gm-screen-grid-cell-title').text(this.title);
 
       //@ts-expect-error I inject cellId
-      const gridCellContent = $(this.cellId).find('.gm-screen-grid-cell-content');
+      const gridCellContent = $(this.cellId).find('[name="gm-screen-grid-cell-content-section"]');
       gridCellContent.html(html);
       //@ts-expect-error Yeah I know this isn't the best idea
       this._element = html;
