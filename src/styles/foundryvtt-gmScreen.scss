@@ -86,7 +86,7 @@ $transition-timing: 400ms;
     justify-content: flex-start;
 
     button {
-      background: rgba(255, 255, 240, 0.7);
+      background: rgba(25, 25, 25, 0.7);
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       border: 0;
@@ -95,6 +95,7 @@ $transition-timing: 400ms;
       pointer-events: all;
       white-space: nowrap;
       width: auto;
+      color: wheat;
 
       &:focus {
         box-shadow: none;
@@ -112,7 +113,7 @@ $transition-timing: 400ms;
     }
 
     .item:not(.active) {
-      background: rgba(255, 255, 240, 0.7) linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 50%);
+      background: rgba(50, 50, 50, 0.7) linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 50%);
     }
 
     .meta-actions {
@@ -150,7 +151,7 @@ $transition-timing: 400ms;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: inset 0 0 calc($space / 2) rgba(255, 255, 255, 0.2), 0 0 calc($space / 2) rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 calc($space / 2) rgba(25, 25, 25, 0.2), 0 0 calc($space / 2) rgba(0, 0, 0, 0.2);
 
     border-radius: calc($space / 2);
 
@@ -226,7 +227,7 @@ $transition-timing: 400ms;
     overflow-y: auto;
     overflow-x: hidden;
     position: relative;
-    box-shadow: inset 0 0 calc($space / 2) rgba(255, 255, 255, 0.2), 0 0 calc($space / 2) rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 calc($space / 2) rgba(25, 25, 25, 0.2), 0 0 calc($space / 2) rgba(0, 0, 0, 0.2);
     padding: 0 calc($space / 5);
     border-top-left-radius: calc($space / 2);
     border-top-right-radius: calc($space / 2);
