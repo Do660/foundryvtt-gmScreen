@@ -161,7 +161,7 @@ export class GmScreen {
       name: `${MODULE_ABBREV}.settings.${this.SETTINGS.editableCell}.Name`,
       default: false,
       type: Boolean,
-      scope: 'client',
+      scope: 'world',
       config: true,
       hint: `${MODULE_ABBREV}.settings.${this.SETTINGS.editableCell}.Hint`,
       onChange: debouncedReload,
